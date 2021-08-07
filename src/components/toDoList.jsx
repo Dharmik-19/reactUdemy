@@ -5,7 +5,9 @@ function ToDOList(props) {
 
   return (
     <li
-      onClick={props.onChecked}
+      onClick={() => {
+        props.onChecked(props.id);
+      }}
       style={{ textDecoration: strike ? "line-through" : "none" }}
     >
       {props.texto}

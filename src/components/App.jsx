@@ -17,8 +17,10 @@ function App() {
     setInputText("");
   }
 
-  function gone() {
-    console.log("Gone!");
+  function goneBye(id) {
+    setItems((prevItems) => {
+      return prevItems.filter((value, index) => index !== id);
+    });
   }
 
   return (
@@ -36,7 +38,7 @@ function App() {
         <ul>
           {items.map((todoItem, i) => (
             //<li>{todoItem}</li>
-            <DOList key={i} id={i} texto={todoItem} onChecked={gone} />
+            <DOList key={i} id={i} texto={todoItem} onChecked={goneBye} />
           ))}
         </ul>
       </div>
